@@ -3,41 +3,46 @@
 <head>
     <title>FWI Predictor</title>
 </head>
-<body>
-    <h2>Fire Weather Index (FWI) Prediction</h2>
-    <form method="POST" action="/predictdata">
-        <label for="temp">Temperature (°C):</label>
-        <input type="text" name="temp" required><br><br>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(to right, #e6f0ff, #ffffff); padding: 40px;">
 
-        <label for="rh">Relative Humidity (%):</label>
-        <input type="text" name="rh" required><br><br>
+    <div style="max-width: 500px; margin: auto; background-color: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center; color: #3366cc;">🔥 Fire Weather Index (FWI) Prediction 🔥</h2>
 
-        <label for="ws">Wind Speed (km/h):</label>
-        <input type="text" name="ws" required><br><br>
+        <form method="POST" action="/predictdata">
+            <label style="font-weight: bold;" for="temp">Temperature (°C):</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="temp" required><br>
 
-        <label for="rain">Rain (mm):</label>
-        <input type="text" name="rain" required><br><br>
+            <label style="font-weight: bold;" for="rh">Relative Humidity (%):</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="rh" required><br>
 
-        <label for="ffmc">FFMC Index:</label>
-        <input type="text" name="ffmc" required><br><br>
+            <label style="font-weight: bold;" for="ws">Wind Speed (km/h):</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="ws" required><br>
 
-        <label for="dmc">DMC Index:</label>
-        <input type="text" name="dmc" required><br><br>
+            <label style="font-weight: bold;" for="rain">Rain (mm):</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="rain" required><br>
 
-        <label for="isi">ISI Index:</label>
-        <input type="text" name="isi" required><br><br>
+            <label style="font-weight: bold;" for="ffmc">FFMC Index:</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="ffmc" required><br>
 
-        <label for="region">Region:</label>
-        <input type="text" name="region" required><br><br>
+            <label style="font-weight: bold;" for="dmc">DMC Index:</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="dmc" required><br>
 
-        <label for="classes">Class:</label>
-        <input type="text" name="classes" placeholder="Fire or Not Fire" required><br><br>
+            <label style="font-weight: bold;" for="isi">ISI Index:</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="isi" required><br>
 
-        <input type="submit" value="Predict FWI">
-    </form>
+            <label style="font-weight: bold;" for="region">Region:</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="region" required><br>
 
-    {% if prediction_text %}
-        <h3>{{ prediction_text }}</h3>
-    {% endif %}
+            <label style="font-weight: bold;" for="classes">Class:</label><br>
+            <input style="width: 100%; padding: 8px; margin: 8px 0;" type="text" name="classes" placeholder="Fire or Not Fire" required><br>
+
+            <input type="submit" value="Predict FWI" style="width: 100%; padding: 10px; background-color: #3366cc; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
+        </form>
+
+        {% if prediction_text %}
+            <h3 style="text-align: center; color: #009933; margin-top: 20px;">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+
 </body>
 </html>
