@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FWI Predictor</title>
+</head>
+<body>
+    <h2>Fire Weather Index (FWI) Prediction</h2>
+    <form method="POST" action="/predictdata">
+        <label for="temp">Temperature (°C):</label>
+        <input type="text" name="temp" required><br><br>
+
+        <label for="rh">Relative Humidity (%):</label>
+        <input type="text" name="rh" required><br><br>
+
+        <label for="ws">Wind Speed (km/h):</label>
+        <input type="text" name="ws" required><br><br>
+
+        <label for="rain">Rain (mm):</label>
+        <input type="text" name="rain" required><br><br>
+
+        <label for="ffmc">FFMC Index:</label>
+        <input type="text" name="ffmc" required><br><br>
+
+        <label for="dmc">DMC Index:</label>
+        <input type="text" name="dmc" required><br><br>
+
+        <label for="isi">ISI Index:</label>
+        <input type="text" name="isi" required><br><br>
+
+        <label for="region">Region:</label>
+        <input type="text" name="region" required><br><br>
+
+        <label for="classes">Class:</label>
+        <input type="text" name="classes" placeholder="Fire or Not Fire" required><br><br>
+
+        <input type="submit" value="Predict FWI">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
